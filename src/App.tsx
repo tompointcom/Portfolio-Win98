@@ -1,19 +1,17 @@
 import './App.css'
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import Desktop from './pages/DesktopPage/Desktop';
 
 function App() {
 
 
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <h1>Welcome to My Portfolio</h1>
-        </header>
-      </div>
-      <footer className="App-footer">
-        <p>&copy; 2023 My Portfolio</p>
-      </footer>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Desktop />} />
+        {/* <Route path="/errorpage" element={<ErrorPage />} /> */}
+      </Routes>
+    </Router>
   )
 }
 
