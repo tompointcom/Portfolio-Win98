@@ -48,20 +48,6 @@ body:before {
   
 }
 
-@keyframes flicker{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      opacity: random(100)/10;
-    }
-  }
-}
-
-.inner-container::after{
-  animation:flicker 0.15s infinite;
-}
-
-
 $gradient-bg: radial-gradient(ellipse at center, #2e3d26 0%, #040805 100%);
 $gradient-bg-attachment: fixed;
 $font-color: #36ba2c;

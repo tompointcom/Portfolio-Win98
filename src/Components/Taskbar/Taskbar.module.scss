@@ -48,4 +48,29 @@
   align-items: center;
   padding-right: 5px;
   flex-shrink: 0;
+  background: #c0c0c0;
+  height: 40px;
+  margin-right: 2px;
+
+  border-top: 2px inset #808080c2;
+  border-left: 2px inset #808080c2;
+  border-bottom: 2px inset #FFFFFF;
+  border-right: 2px inset #FFFFFF;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'MSW98UI-Regular';
+  font-size: 20px;
+  color: #000000d8;
+  padding: 5px 6px 0px 0px;
+  min-width: 60px;
+  
+}
+
+.time {
+  font-weight: normal;
+  line-height: 1;
 }
