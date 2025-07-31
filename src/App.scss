@@ -1,0 +1,198 @@
+
+:root {
+  --background: transparent;
+  --size: 1.6;
+}
+
+// Règle globale pour toutes les images
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+.clickable-image {
+  pointer-events: auto;
+}
+
+body:before,
+.container:before,
+.container:after,
+.inner-container:after {
+  pointer-events: none;
+}
+
+.inner-container, #term {
+  height: 100%;
+}
+
+/* original code below */
+
+body {
+  font-family: Sans-serif;
+  background: linear-gradient(45deg, #222529 0%,#191519 100%);
+}
+
+body:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 72px 72px 72px 72px;
+  border-color: rgba(243, 236, 168, 0.4) rgba(243, 236, 168, 0.3) rgba(243, 236, 168, 0.5) rgba(243, 236, 168, 0.3);
+  
+}
+
+@keyframes flicker{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      opacity: random(100)/10;
+    }
+  }
+}
+
+.inner-container::after{
+  animation:flicker 0.15s infinite;
+}
+
+
+$gradient-bg: radial-gradient(ellipse at center, #2e3d26 0%, #040805 100%);
+$gradient-bg-attachment: fixed;
+$font-color: #36ba2c;
+
+.text {
+  color: $font-color;
+  font-size: 24px;
+  padding: 0 4px;
+  display: inline-block;
+  text-shadow: 0px 0px 8px #79ba48;
+}
+
+.container {
+  $positionoffset: 64px;
+  background: #222;
+  background: $gradient-bg;
+  background-attachment: $gradient-bg-attachment;
+  position: absolute;
+  top: $positionoffset;
+  left: $positionoffset;
+  right: $positionoffset;
+  bottom: $positionoffset;
+  padding: 20px;
+  border-radius:24px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.container:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.container:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  box-shadow: inset 0px 0px 32px 16px rgba(0,0,0,0.4);
+  z-index: 2;
+  border-radius: 24px;
+}
+
+.inner-container:after {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(http://i.imgur.com/VXcVUTX.png);
+  border-radius: 24px;
+}
+
+.err-code {
+  font-family: 'Orbitron';
+  font-weight: bold;
+  font-size: 128px;
+  padding: 0 4px;
+}
+
+.buzz{
+  color: $font-color;
+  position: relative;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0
+  }
+  40% {
+    opacity: 0
+  }
+  45% {
+    opacity: 1
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+.blip {
+  animation: blink 1.5s steps(5, start) infinite;
+}
+
+@keyframes noise-anim{
+  $steps: 30;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(200)+px,0);
+    }
+  }
+}
+
+.buzz:after{
+  content: attr(data-text);
+  position: absolute;
+  left: 4px;
+  top: 0;
+  background: $gradient-bg;
+  background-attachment: $gradient-bg-attachment;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+  $steps: 30;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(90)+px,9999px,random(150)+px,0);
+    }
+  }
+}
+
+.buzz:before{
+  content: attr(data-text);
+  position: absolute;
+  left: -3px;
+  top: 0;
+  padding: 0 4px;
+  background: $gradient-bg;
+  background-attachment: $gradient-bg-attachment;
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
