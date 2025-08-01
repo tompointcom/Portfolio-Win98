@@ -1,3 +1,32 @@
+// Curseurs Windows 98
+body, * {
+  cursor: url('./assets/cursors/arrow.cur'), auto;
+}
+
+// Curseur de pointeur (liens, boutons)
+a, button, .clickable, .startButton, .MyComputerIcon {
+  cursor: url('./assets/cursors/Cursor_15.cur'), pointer;
+}
+
+// Curseur de texte
+input, textarea, .text-input {
+  cursor: url('./assets/cursors/text.cur'), text;
+}
+
+// Curseur d'attente
+.loading {
+  cursor: url('./assets/cursors/wait.cur'), wait;
+}
+
+// Curseur de redimensionnement
+.resizable {
+  cursor: url('./assets/cursors/resize.cur'), nw-resize;
+}
+
+// Curseur interdit
+.disabled {
+  cursor: url('./assets/cursors/no.cur'), not-allowed;
+}
 
 :root {
   --background: transparent;
@@ -109,7 +138,7 @@ $font-color: #36ba2c;
   bottom: 0;
   left: 0;
   right: 0;
-  background: url(http://i.imgur.com/VXcVUTX.png);
+  background: url(./assets/noise.png);
   border-radius: 24px;
 }
 

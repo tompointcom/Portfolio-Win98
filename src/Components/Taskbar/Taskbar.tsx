@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import styles from './Taskbar.module.scss';
 import windowsLogo from '../../assets/taskbar-elements/StartButton.svg';
-import taskbarElements from '../../assets/taskbar-elements/TaskbarElements.svg';
+import taskbarElements from '../../assets/taskbar-elements/TaskbarStylingElements.svg';
 import Calendar from '../../assets/taskbar-elements/Calendar.svg';
 import Sound from '../../assets/taskbar-elements/Sound.svg';
+import InternetExplorer from '../../assets/taskbar-elements/InternetExplorerIcon.svg';
+import LetterIcon from '../../assets/taskbar-elements/LetterIcon.svg';
+import PaintIcon from '../../assets/taskbar-elements/PaintIcon.svg';
+import SateliteIcone  from '../../assets/taskbar-elements/SateliteIcon.svg';
 
 function Taskbar() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -34,6 +38,13 @@ function Taskbar() {
       </div>
       <div className={styles.taskIcons}>
         <img className={styles.elements} src={taskbarElements} alt="Taskbar styling bars" />
+        <img className={styles.icon} src={InternetExplorer} alt="Internet Explorer" />
+        <img className={styles.icon} src={LetterIcon} alt="Letter Icon" />
+        <img className={styles.icon} src={PaintIcon} alt="Paint Icon" />
+        <img className={styles.icon} src={SateliteIcone} alt="Satellite Icon" />
+        <img className={styles.elements} src={taskbarElements} alt="Taskbar styling bars" />
+      </div>
+      <div className={styles.taskbarElements}>
       </div>
       <div className={styles.systemTray}>
         <img className={styles.calendar} src={Calendar} alt="Calendar" />
