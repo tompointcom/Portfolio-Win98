@@ -1,5 +1,8 @@
 import styles from "./Desktop.module.scss";
 import Taskbar from "../../Components/Taskbar/Taskbar";
+import DesktopIcon from "../../Components/DesktopIcon/DesktopIcon";
+
+// Import des icônes
 import MyComputerIcon from "../../assets/icons/MyComputerIcon.svg";
 import MyDocumentsIcon from "../../assets/icons/MyDocumentsIcon.svg";
 import InternetExplorerIcon from "../../assets/icons/InternetExplorerIcon.svg";
@@ -9,41 +12,66 @@ import MinesweeperIcon from "../../assets/icons/MinesweeperIcon.svg";
 import DirIcon from "../../assets/icons/DirIcon.svg";
 
 function Desktop() {
+  const handleIconClick = (iconName: string) => {
+    console.log(`Clicked on ${iconName}`);
+  };
+
+  const handleIconDoubleClick = (iconName: string) => {
+    console.log(`Double-clicked on ${iconName}`);
+    // Ici vous pouvez ouvrir des fenêtres, naviguer, etc.
+  };
+
   return (
     <div className={styles.desktop}>
       <div className={styles.desktop__icons}>
-        <div className={styles.Icon}>
-          <img src={MyComputerIcon} alt="My Computer Icon" />
-          <span>My Computer</span>
-        </div>
-        <div className={styles.Icon}>
-          <img src={MyDocumentsIcon} alt="My Documents Icon" />
-          <span>My Documents</span>
-        </div>
-        <div className={styles.Icon}>
-          <img src={InternetExplorerIcon} alt="Internet Explorer Icon" />
-          <span>Internet Explorer</span>
-        </div>
-        <div className={styles.Icon}>
-          <img src={RecycleBinIcon} alt="Recycle Bin Icon" />
-          <span>Recycle Bin</span>
-        </div>
-        <div className={styles.Icon}>
-          <img src={OutlookExpressIcon} alt="Outlook Express Icon" />
-          <span>Outlook Express</span>
-        </div>
-        <div className={styles.Icon}>
-          <img src={MinesweeperIcon} alt="Minesweeper Icon" />
-          <span>Minesweeper</span>    
-        </div>
-        <div className={styles.Icon}>
-          <img src={DirIcon} alt="Directory Icon" />  
-          <span>My Resume</span>
-        </div>
-        <div className={styles.Icon}>
-          <img src={DirIcon} alt="Directory Icon" />
-          <span>My Projects</span>
-        </div>
+        <DesktopIcon 
+          icon={MyComputerIcon} 
+          label="My Computer"
+          onClick={() => handleIconClick("My Computer")}
+          onDoubleClick={() => handleIconDoubleClick("My Computer")}
+        />
+        <DesktopIcon 
+          icon={MyDocumentsIcon} 
+          label="My Documents"
+          onClick={() => handleIconClick("My Documents")}
+          onDoubleClick={() => handleIconDoubleClick("My Documents")}
+        />
+        <DesktopIcon 
+          icon={InternetExplorerIcon} 
+          label="Internet Explorer"
+          onClick={() => handleIconClick("Internet Explorer")}
+          onDoubleClick={() => handleIconDoubleClick("Internet Explorer")}
+        />
+        <DesktopIcon 
+          icon={RecycleBinIcon} 
+          label="Recycle Bin"
+          onClick={() => handleIconClick("Recycle Bin")}
+          onDoubleClick={() => handleIconDoubleClick("Recycle Bin")}
+        />
+        <DesktopIcon 
+          icon={OutlookExpressIcon} 
+          label="Outlook Express"
+          onClick={() => handleIconClick("Outlook Express")}
+          onDoubleClick={() => handleIconDoubleClick("Outlook Express")}
+        />
+        <DesktopIcon 
+          icon={MinesweeperIcon} 
+          label="Minesweeper"
+          onClick={() => handleIconClick("Minesweeper")}
+          onDoubleClick={() => handleIconDoubleClick("Minesweeper")}
+        />
+        <DesktopIcon 
+          icon={DirIcon} 
+          label="My Resume"
+          onClick={() => handleIconClick("My Resume")}
+          onDoubleClick={() => handleIconDoubleClick("My Resume")}
+        />
+        <DesktopIcon 
+          icon={DirIcon} 
+          label="My Projects"
+          onClick={() => handleIconClick("My Projects")}
+          onDoubleClick={() => handleIconDoubleClick("My Projects")}
+        />
       </div>
       <Taskbar />
     </div>

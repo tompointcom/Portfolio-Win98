@@ -13,42 +13,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   gap: 15px;
-  height: calc(100vh - 120px); // Hauteur max pour forcer le wrap
+  height: calc(100vh - 210px); // Hauteur max pour forcer le wrap
   max-height: 750px; // Ou une valeur fixe selon vos besoins
   align-content: flex-start; // Aligne les colonnes à gauche
 }
 
-.Icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80px;
-  height: 100px; // Hauteur fixe pour chaque icône
-  padding: 8px;
-  border-radius: 2px;
-  cursor: pointer;
-  user-select: none;
-  
-  img {
-    width: 55px;
-    height: 55px;
-    margin-bottom: 4px;
-    pointer-events: none;
-  }
-  
-  span {
-    font-family: 'MSW98UI-Regular', sans-serif;
-    font-size: 14px;
-    color: white;
-    text-align: center;
-    word-wrap: break-word;
-    line-height: 1.2;
-    width: 100%;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  }
-  
-  &:active span {
-    background-color: rgba(0, 0, 255, 0.5);
-    border: 1px dotted #fff;
-  }
-}

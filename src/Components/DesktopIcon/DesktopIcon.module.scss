@@ -1,0 +1,43 @@
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  height: 100px;
+  padding: 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  
+  img {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 4px;
+    pointer-events: none;
+  }
+  
+  span {
+    font-family: 'MSW98UI-Regular', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.2;
+    width: 100%;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    padding: 2px 4px;
+    border-radius: 1px;
+  }
+  
+
+  // Effet d'activation
+  &:active {
+    
+    span {
+      background-color: rgba(0, 0, 255, 0.7);
+      border: 1px dotted #fff;
+      color: white;
+    }
+  }
+}
