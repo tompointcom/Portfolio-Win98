@@ -1,9 +1,9 @@
 .taskbar {
   position: absolute;
-  bottom: 0;      // ← collé en bas du desktop
-  left: 0;        // ← collé à gauche
-  right: 0;       // ← collé à droite
-  width: 100%;    // ← pleine largeur
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   height: 57px;
   display: flex;
   align-items: center;
@@ -12,7 +12,27 @@
   background-image: url('../../assets/taskbar-elements/TaskbarBackground.svg');
   background-repeat: repeat-x;
   background-size: auto 100%;
-  z-index: 100;   // au-dessus des fenêtres
+  z-index: 100;
+}
+
+/* Désactive la sélection dans toute la taskbar */
+.taskbar,
+.taskbar * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Empêche le drag des images (Chrome/Edge) */
+.taskbar img {
+  -webkit-user-drag: none;
+
+}
+
+/* Optionnel: évite le curseur texte sur les libellés des tâches */
+.taskbar .taskBtn span {
+  cursor: default;
 }
 
 .startButton {
@@ -58,6 +78,7 @@
   border-left: 2px inset #808080c2;
   border-bottom: 2px inset #FFFFFF;
   border-right: 2px inset #FFFFFF;
+
 }
 
 .clock {
@@ -75,4 +96,5 @@
 .time {
   font-weight: normal;
   line-height: 1;
+
 }
