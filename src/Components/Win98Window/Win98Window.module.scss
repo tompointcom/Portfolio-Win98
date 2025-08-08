@@ -1,0 +1,106 @@
+.window {
+  position: absolute;
+  background: #c0c0c0;
+  box-shadow:
+    inset -1px -1px 0 #ffffff,
+    inset 1px 1px 0 #808080,
+    inset -2px -2px 0 #dfdfdf,
+    inset 2px 2px 0 #000000;
+  user-select: none;
+  z-index: 50;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.titleBar {
+  height: 22px;
+  padding: 2px 4px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:
+    linear-gradient(to right, rgb(11, 36, 106), rgb(166, 202, 240));
+  border-bottom: 1px solid #002a63;
+  box-shadow:
+    inset 1px 1px 0 #9fc3ff,
+    inset -1px -1px 0 #0a2f66;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'MSW98UI-Regular', sans-serif;
+  font-size: 12px;
+  text-shadow: 1px 1px 0 #002a63;
+}
+
+.iconSquare {
+  width: 16px;
+  height: 16px;
+  background: url('../../assets/minesweeper/minesweeper-icon.png') no-repeat center;
+  background-size: 16px 16px; // ajuste la taille visible (essaie 12–16px)
+  image-rendering: pixelated;  // rendu net façon pixel-art
+}
+
+.controls { display: flex; gap: 4px; }
+
+.btn {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  background: #c0c0c0;
+  box-shadow:
+    inset -1px -1px 0 #000000,
+    inset 1px 1px 0 #ffffff,
+    inset -2px -2px 0 #808080,
+    inset 2px 2px 0 #dfdfdf;
+  cursor: pointer;
+  position: relative;
+  line-height: 0; /* pas de texte */
+  outline: none;
+
+  &:active {
+    box-shadow:
+      inset 1px 1px 0 #808080,
+      inset -1px -1px 0 #ffffff,
+      inset 2px 2px 0 #000000,
+      inset -2px -2px 0 #dfdfdf;
+  }
+}
+
+/* Minimize: tiret central */
+.btnMin::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 10px; height: 2px;
+  background: #000;
+  transform: translate(-50%, -50%);
+}
+.btnMin:active::before {
+  transform: translate(calc(-50% + 1px), calc(-50% + 1px)); /* petit décalage pressé */
+}
+
+/* Close: X */
+.btnClose::before,
+.btnClose::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 12px; height: 2px;
+  background: #000;
+  transform-origin: center;
+}
+.btnClose::before { transform: translate(-50%, -50%) rotate(45deg); }
+.btnClose::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+.btnClose:active::before { transform: translate(calc(-50% + 1px), calc(-50% + 1px)) rotate(45deg); }
+.btnClose:active::after  { transform: translate(calc(-50% + 1px), calc(-50% + 1px)) rotate(-45deg); }
+
+.body {
+  padding: 6px;
+  background: #c0c0c0;
+  flex: 1 1 auto;
+}

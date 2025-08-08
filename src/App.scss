@@ -140,6 +140,7 @@ $font-color: #36ba2c;
   right: 0;
   background: url(./assets/noise.png);
   border-radius: 24px;
+  z-index: 10000;
 }
 
 .err-code {

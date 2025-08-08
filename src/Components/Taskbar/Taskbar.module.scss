@@ -1,9 +1,9 @@
 .taskbar {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  width: calc(100% - 40px);
+  bottom: 0;      // ← collé en bas du desktop
+  left: 0;        // ← collé à gauche
+  right: 0;       // ← collé à droite
+  width: 100%;    // ← pleine largeur
   height: 57px;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   background-image: url('../../assets/taskbar-elements/TaskbarBackground.svg');
   background-repeat: repeat-x;
   background-size: auto 100%;
-  // z-index: 1000;
+  z-index: 100;   // au-dessus des fenêtres
 }
 
 .startButton {

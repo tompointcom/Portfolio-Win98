@@ -3,6 +3,9 @@
   height: 100%;
   width: 100%;
   display: flex;
+  position: relative;     // conteneur pour les absolus
+  overflow: hidden;       // empêche de sortir visuellement
+  --taskbar-height: 57px; // expose la hauteur au JS
 }
 
 .desktop__icons {

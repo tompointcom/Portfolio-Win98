@@ -1,0 +1,163 @@
+// Palette Win98
+$light: #ffffff;
+$light2: #dfdfdf;
+$mid: #c0c0c0;
+$dark: #808080;
+$black: #000000;
+
+.wrapper {
+  --cell-size: 16px; // Ajuster pour coller au rendu d'époque
+  width: fit-content;
+  background: $mid;
+  padding: 6px;
+  box-shadow:
+    inset -1px -1px 0 $light,
+    inset 1px 1px 0 $dark,
+    inset -2px -2px 0 $light2,
+    inset 2px 2px 0 $black;
+  font-family: 'MSW98UI-Regular', sans-serif;
+  user-select: none;
+}
+
+/* Panneau supérieur (compteurs + smiley) encastré */
+.topBar {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  background: $mid;
+  box-shadow:
+    inset 1px 1px 0 $light,
+    inset -1px -1px 0 $dark;
+  margin-bottom: 6px;
+}
+
+/* Compteurs LED rouges */
+.counter {
+  background: #000;
+  padding: 2px 4px;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    inset -1px -1px 0 $light,
+    inset 1px 1px 0 $dark,
+    inset -2px -2px 0 $light2,
+    inset 2px 2px 0 $black;
+}
+
+.counterInner {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+
+  img {
+    width: 13px;   /* adapte aux dimensions de tes PNG */
+    height: 23px;
+    display: block;
+  }
+}
+
+/* Smiley sur bouton 3D */
+.face {
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center; 
+  padding-left: 2px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: $mid;
+  cursor: pointer;
+  box-shadow:
+    inset -1px -1px 0 $light,
+    inset 1px 1px 0 $dark,
+    inset -2px -2px 0 $light2,
+    inset 2px 2px 0 $black;
+
+  &:active {
+    box-shadow:
+      inset 1px 1px 0 $dark,
+      inset -1px -1px 0 $light,
+      inset 2px 2px 0 $black,
+      inset -2px -2px 0 $light2;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    pointer-events: none; // évite d’intercepter le mousedown
+  }
+}
+
+/* Cadre double du plateau (relevé) */
+.boardFrame {
+  padding: 6px;
+  background: $mid;
+  box-shadow:
+    inset 1px 1px 0 $light,
+    inset -1px -1px 0 $dark;
+}
+
+/* Grille */
+.board {
+  display: grid;
+  gap: 0;
+  background: $mid;
+  padding: 6px;
+  box-shadow:
+    inset -1px -1px 0 $light,
+    inset 1px 1px 0 $dark,
+    inset -2px -2px 0 $light2,
+    inset 2px 2px 0 $black;
+}
+
+/* Case non révélée (en relief) */
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: none;
+
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+
+  /* affichage de l'image de la tuile */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: var(--cell-size) var(--cell-size);
+  image-rendering: pixelated;
+
+  &:active:not(.revealed) {
+    box-shadow:
+      inset 1px 1px 0 $dark,
+      inset -1px -1px 0 $light,
+      inset 2px 2px 0 $black,
+      inset -2px -2px 0 $light2;
+    background-color: #bdbdbd;
+  }
+}
+
+/* Case révélée (enfoncée) */
+.revealed {
+  background: #bdbdbd;
+  box-shadow:
+    inset 1px 1px 0 $dark,
+    inset -1px -1px 0 $light;
+}
+
+/* Drapeau & mine (placeholders, remplaçables par sprites pixel) */
+.flagged::after,
+.mine.revealed::after { content: none; }
+
+/* Couleurs des chiffres (fidèles au classique) */
+.n1 { color: #0000ff; }
+.n2 { color: #008200; }
+.n3 { color: #ff0000; }
+.n4 { color: #000084; }
+.n5 { color: #840000; }
+.n6 { color: #008284; }
+.n7 { color: #840084; }
+.n8 { color: #000000; }
