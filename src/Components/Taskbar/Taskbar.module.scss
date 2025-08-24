@@ -15,7 +15,6 @@
   z-index: 100;
 }
 
-/* Désactive la sélection dans toute la taskbar */
 .taskbar,
 .taskbar * {
   -webkit-user-select: none;
@@ -24,13 +23,11 @@
   user-select: none;
 }
 
-/* Empêche le drag des images (Chrome/Edge) */
 .taskbar img {
   -webkit-user-drag: none;
 
 }
 
-/* Optionnel: évite le curseur texte sur les libellés des tâches */
 .taskbar .taskBtn span {
   cursor: default;
 }
