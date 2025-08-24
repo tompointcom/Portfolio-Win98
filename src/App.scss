@@ -138,7 +138,8 @@ $font-color: #36ba2c;
   bottom: 0;
   left: 0;
   right: 0;
-  // background: url(./assets/noise.png);
+  background: url(./assets/noise.png);
+  opacity: 0.58;
   border-radius: 24px;
   z-index: 10000;
 }
