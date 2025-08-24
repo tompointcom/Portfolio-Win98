@@ -23,7 +23,6 @@ function Desktop() {
 
   const handleIconDoubleClick = (iconName: string) => {
     console.log(`Double-clicked on ${iconName}`);
-    // Ici vous pouvez ouvrir des fenêtres, naviguer, etc.
   };
 
   return (
