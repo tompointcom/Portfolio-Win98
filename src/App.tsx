@@ -1,17 +1,18 @@
 import './App.scss'
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Desktop from './pages/DesktopPage/Desktop';
+import { HashRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className="container">
     <div className="inner-container">
-      <Router>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Desktop />} />
             {/* <Route path="/errorpage" element={<ErrorPage />} /> */}
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
     </div>
   )
