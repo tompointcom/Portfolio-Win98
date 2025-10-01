@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './Taskbar.module.scss';
 import windowsLogo from '../../assets/taskbar-elements/StartButton.svg';
-import taskbarElements from '../../assets/taskbar-elements/TaskbarStylingElements.svg';
+import taskbarElements from '../../assets/taskbar-elements/TaskBarStylingElements.svg';
 import Calendar from '../../assets/taskbar-elements/Calendar.svg';
 import Sound from '../../assets/taskbar-elements/Sound.svg';
 import InternetExplorer from '../../assets/taskbar-elements/InternetExplorerIcon.svg';
