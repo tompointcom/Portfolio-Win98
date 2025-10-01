@@ -4,6 +4,7 @@ import styles from './Win98Window.module.scss';
 
 interface Win98WindowProps {
   title: string;
+  icon?: string;
   initialTop?: number;
   initialLeft?: number;
   width?: number;
@@ -14,6 +15,7 @@ interface Win98WindowProps {
 
 export default function Win98Window({
   title,
+  icon,
   initialTop = 80,
   initialLeft = 120,
   width,
@@ -70,7 +72,11 @@ export default function Win98Window({
         onMouseDown={(e) => { if (e.button === 0) { e.preventDefault(); setDrag({x:e.clientX,y:e.clientY}); } }}
       >
         <div className={styles.title}>
-          <span className={styles.iconSquare} />
+          {icon ? (
+            <img src={icon} alt="" className={styles.iconSquare} />
+          ) : (
+            <span className={styles.iconSquare} />
+          )}
           {title}
         </div>
         <div className={styles.controls}>

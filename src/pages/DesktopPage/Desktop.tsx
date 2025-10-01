@@ -3,20 +3,19 @@ import Taskbar from "../../Components/Taskbar/Taskbar";
 import DesktopIcon from "../../Components/DesktopIcon/DesktopIcon";
 import Win98Window from "../../Components/Win98Window/Win98Window";
 import Minesweeper from '../../Components/Minesweeper/Minesweeper';
+import InternetExplorer from '../../Components/InternetExplorer/InternetExplorer';
 
 
 // Import des icônes
-import MyComputerIcon from "../../assets/icons/MyComputerIcon.svg";
-import MyDocumentsIcon from "../../assets/icons/MyDocumentsIcon.svg";
 import InternetExplorerIcon from "../../assets/icons/InternetExplorerIcon.svg";
-import OutlookExpressIcon from "../../assets/icons/OutlookExpressIcon.svg";
-import RecycleBinIcon from "../../assets/icons/RecycleBinIcon.svg";
+import Resume from "../../assets/icons/pdf.png";
 import MinesweeperIcon from "../../assets/icons/MinesweeperIcon.svg";
-import DirIcon from "../../assets/icons/DirIcon.svg";
+import HTML5 from "../../assets/icons/html-5.png";
 import { useState } from 'react';
 
 function Desktop() {
   const [showMinesweeper, setShowMinesweeper] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
   const handleIconClick = (iconName: string) => {
     console.log(`Clicked on ${iconName}`);
   };
@@ -29,52 +28,22 @@ function Desktop() {
     <div className={styles.desktop}>
       <div className={styles.desktop__icons}>
         <DesktopIcon 
-          icon={MyComputerIcon} 
-          label="My Computer"
-          onClick={() => handleIconClick("My Computer")}
-          onDoubleClick={() => handleIconDoubleClick("My Computer")}
+          icon={Resume} 
+          label="Resume.pdf"
+          onClick={() => handleIconClick("My Resume")}
+          onDoubleClick={() => handleIconDoubleClick("My Resume")}
         />
         <DesktopIcon 
-          icon={MyDocumentsIcon} 
-          label="My Documents"
-          onClick={() => handleIconClick("My Documents")}
-          onDoubleClick={() => handleIconDoubleClick("My Documents")}
-        />
-        <DesktopIcon 
-          icon={InternetExplorerIcon} 
-          label="Internet Explorer"
-          onClick={() => handleIconClick("Internet Explorer")}
-          onDoubleClick={() => handleIconDoubleClick("Internet Explorer")}
-        />
-        <DesktopIcon 
-          icon={RecycleBinIcon} 
-          label="Recycle Bin"
-          onClick={() => handleIconClick("Recycle Bin")}
-          onDoubleClick={() => handleIconDoubleClick("Recycle Bin")}
-        />
-        <DesktopIcon 
-          icon={OutlookExpressIcon} 
-          label="Outlook Express"
-          onClick={() => handleIconClick("Outlook Express")}
-          onDoubleClick={() => handleIconDoubleClick("Outlook Express")}
+          icon={HTML5} 
+          label="My Projects"
+          onClick={() => handleIconClick("My Projects")}
+          onDoubleClick={() => setShowProjects(true)}
         />
         <DesktopIcon 
           icon={MinesweeperIcon} 
           label="Minesweeper"
           onClick={() => handleIconClick("Minesweeper")}
           onDoubleClick={() => setShowMinesweeper(true)}
-        />
-        <DesktopIcon 
-          icon={DirIcon} 
-          label="My Resume"
-          onClick={() => handleIconClick("My Resume")}
-          onDoubleClick={() => handleIconDoubleClick("My Resume")}
-        />
-        <DesktopIcon 
-          icon={DirIcon} 
-          label="My Projects"
-          onClick={() => handleIconClick("My Projects")}
-          onDoubleClick={() => handleIconDoubleClick("My Projects")}
         />
       </div>
       
@@ -86,6 +55,20 @@ function Desktop() {
           onClose={() => setShowMinesweeper(false)}
         >
           <Minesweeper rows={9} cols={9} mines={10} />
+        </Win98Window>
+      )}
+
+      {showProjects && (
+        <Win98Window
+          title="Internet Explorer - My Projects"
+          icon={InternetExplorerIcon}
+          initialTop={60}
+          initialLeft={100}
+          width={900}
+          height={600}
+          onClose={() => setShowProjects(false)}
+        >
+          <InternetExplorer />
         </Win98Window>
       )}
 
