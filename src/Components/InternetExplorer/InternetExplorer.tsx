@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './InternetExplorer.module.css';
+import styles from './InternetExplorer.module.scss';
 
 import Refresh from '../../assets/icons/REFRESH.svg';
 import Back from '../../assets/icons/FlecheGauche.svg';

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './Taskbar.module.scss';
 import windowsLogo from '../../assets/taskbar-elements/StartButton.svg';
-// import taskbarElements from '../../assets/taskbar-elements/TaskbarStylingElements.svg';
+import taskbarElements from '../../assets/taskbar-elements/TaskbarStylingElements.svg';
 import Calendar from '../../assets/taskbar-elements/Calendar.svg';
 import Sound from '../../assets/taskbar-elements/Sound.svg';
 import InternetExplorer from '../../assets/taskbar-elements/InternetExplorerIcon.svg';
@@ -37,12 +37,12 @@ function Taskbar() {
         <img className={styles.logo} src={windowsLogo} alt="Logo Windows" />
       </div>
       <div className={styles.taskIcons}>
-        {/* <img className={styles.elements} src={taskbarElements} alt="Taskbar styling bars" /> */}
+        <img className={styles.elements} src={taskbarElements} alt="Taskbar styling bars" />
         <img className={styles.icon} src={InternetExplorer} alt="Internet Explorer" />
         <img className={styles.icon} src={LetterIcon} alt="Letter Icon" />
         <img className={styles.icon} src={PaintIcon} alt="Paint Icon" />
         <img className={styles.icon} src={SateliteIcone} alt="Satellite Icon" />
-        {/* <img className={styles.elements} src={taskbarElements} alt="Taskbar styling bars" /> */}
+        <img className={styles.elements} src={taskbarElements} alt="Taskbar styling bars" />
       </div>
       <div className={styles.taskbarElements}>
       </div>
