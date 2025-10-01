@@ -40,13 +40,15 @@
   width: 16px;
   height: 16px;
   background: url('../../assets/minesweeper/minesweeper-icon.png') no-repeat center;
-  background-size: 16px 16px; // ajuste la taille visible (essaie 12–16px)
-  image-rendering: pixelated;  // rendu net façon pixel-art
+  background-size: 16px 16px;
+  image-rendering: pixelated;
 }
 
 
 
-.controls { display: flex; gap: 4px; }
+.controls { 
+  display: flex; 
+  gap: 4px; }
 
 .btn {
   width: 18px;
@@ -73,7 +75,6 @@
   }
 }
 
-/* Minimize: tiret central */
 .btnMin::before {
   content: '';
   position: absolute;
@@ -83,10 +84,9 @@
   transform: translate(-50%, -50%);
 }
 .btnMin:active::before {
-  transform: translate(calc(-50% + 1px), calc(-50% + 1px)); /* petit décalage pressé */
+  transform: translate(calc(-50% + 1px), calc(-50% + 1px));
 }
 
-/* Close: X */
 .btnClose::before,
 .btnClose::after {
   content: '';

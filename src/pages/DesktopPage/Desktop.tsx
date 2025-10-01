@@ -16,33 +16,26 @@ import { useState } from 'react';
 function Desktop() {
   const [showMinesweeper, setShowMinesweeper] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
-  const handleIconClick = (iconName: string) => {
-    console.log(`Clicked on ${iconName}`);
-  };
-
-  const handleIconDoubleClick = (iconName: string) => {
-    console.log(`Double-clicked on ${iconName}`);
-  };
-
+  
   return (
     <div className={styles.desktop}>
       <div className={styles.desktop__icons}>
         <DesktopIcon 
           icon={Resume} 
           label="Resume.pdf"
-          onClick={() => handleIconClick("My Resume")}
-          onDoubleClick={() => handleIconDoubleClick("My Resume")}
+          onClick={() => {}}
+          onDoubleClick={() => {}}
         />
         <DesktopIcon 
           icon={HTML5} 
           label="My Projects"
-          onClick={() => handleIconClick("My Projects")}
+          onClick={() => {}}
           onDoubleClick={() => setShowProjects(true)}
         />
         <DesktopIcon 
           icon={MinesweeperIcon} 
           label="Minesweeper"
-          onClick={() => handleIconClick("Minesweeper")}
+          onClick={() => {}}
           onDoubleClick={() => setShowMinesweeper(true)}
         />
       </div>
