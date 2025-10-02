@@ -4,7 +4,6 @@ import DesktopIcon from "../../Components/DesktopIcon/DesktopIcon";
 import Win98Window from "../../Components/Win98Window/Win98Window";
 import Minesweeper from '../../Components/Minesweeper/Minesweeper';
 import InternetExplorer from '../../Components/InternetExplorer/InternetExplorer';
-import resumePdf from '../../assets/tom-courcy-cv.pdf';
 
 // Import des icônes
 import InternetExplorerIcon from "../../assets/icons/InternetExplorerIcon.svg";
@@ -20,8 +19,8 @@ function Desktop() {
 
     const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = resumePdf;
-    link.download = 'Tom-Courcy-CV.pdf';
+    link.href = '/courcy_tomCV.pdf';
+    link.download = 'courcy_tomCV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
