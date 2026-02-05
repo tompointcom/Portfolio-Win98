@@ -7,7 +7,7 @@ import Forward from '../../assets/icons/FlecheDroite.svg';
 import Home from '../../assets/icons/Home.svg';
 import SportSee from '../../assets/logo2.png';
 import BankApi from '../../assets/ABlogo.png';
-import Kasa from '../../assets/LOGO.png';
+import ImpulsePaie from '../../assets/Logo.svg';
 
 
 interface Project {
@@ -21,6 +21,14 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    id: '0',
+    title: 'ImpulsePaie',
+    description: 'A payroll management showcase website developed with React and Sanity.io.',
+    image: ImpulsePaie,
+    technologies: ['React', 'TypeScript', 'React Router', 'Sanity.io'],
+    liveLink: 'https://impulsepaie.fr/',
+  },
   {
     id: '1',
     title: 'Bank-Api',
@@ -37,15 +45,6 @@ const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Recharts'],
     githubLink: 'https://github.com/tompointcom/SportSee-Front',
 
-  },
-  {
-    id: '3',
-    title: 'Kasa',
-    description: 'Real estate rental platform', 
-    image: Kasa,
-    technologies: ['React', 'TypeScript', 'React Router'],
-    liveLink: 'https://tompointcom.github.io/Kasa/',
-    githubLink: 'https://github.com/tompointcom/Kasa'
   },
 
 ];
@@ -75,6 +74,7 @@ export default function InternetExplorer() {
           <header className={styles.header}>
             <h1>My Realisations</h1>
             <p>Front-End Developper • React • TypeScript</p>
+            <a href="https://github.com/tompointcom" target="_blank" rel="noopener noreferrer">Github</a>
           </header>
 
           <div className={styles.projects}>
